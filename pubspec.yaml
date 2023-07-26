@@ -40,6 +40,9 @@ dependencies:
   logging: ^1.2.0
   equatable: ^2.0.5
 
+  # Widgets
+  flutter_svg: ^2.0.7
+
   # Localization
   imdb_localization:
     path: packages/imdb_localization
