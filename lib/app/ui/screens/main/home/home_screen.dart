@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             if (index == 0) const SizedBox(width: 16.0),
                             MovieItem(
                               movie: movie,
-                              index: index,
+                              index: index + 1,
                             ),
                             if (index == state.movies.length - 1)
                               const SizedBox(width: 16.0),
