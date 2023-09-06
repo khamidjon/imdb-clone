@@ -22,3 +22,18 @@ class FetchedTrendingMoviesHomeState extends TrendingMoviesHomeState {
   @override
   List<Object> get props => [movies];
 }
+
+sealed class TopRatedMoviesHomeState extends HomeState {}
+
+class FetchingTopRatedMoviesHomeState extends TopRatedMoviesHomeState {}
+
+class FetchFailTopRatedMoviesHomeState extends TopRatedMoviesHomeState {}
+
+class FetchedTopRatedMoviesHomeState extends TopRatedMoviesHomeState {
+  FetchedTopRatedMoviesHomeState(this.movies);
+
+  final List<MovieData> movies;
+
+  @override
+  List<Object> get props => [movies];
+}

@@ -14,4 +14,7 @@ abstract class MovieApi {
 
   @GET('/trending/movie/week')
   Future<PaginatedResponse<MovieResponse>> getTrendingMoviesOfThisWeek();
+
+  @GET('/movie/top_rated')
+  Future<PaginatedResponse<MovieResponse>> getTopRatedMovies();
 }

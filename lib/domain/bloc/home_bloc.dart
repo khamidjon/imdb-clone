@@ -11,6 +11,7 @@ class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
     this._movieRepository,
   ) : super(InitialHomeState()) {
     on<FetchTrendingMoviesHomeEvent>(_handleFetchTrendingMovies);
+    on<FetchTopRatedMoviesHomeEvent>(_handleFetchTopRatedMovies);
   }
 
   final MovieRepository _movieRepository;
@@ -25,6 +26,19 @@ class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
       emit(FetchedTrendingMoviesHomeState(data));
     } on Object catch (_) {
       emit(FetchFailTrendingMoviesHomeState());
+    }
+  }
+
+  Future<void> _handleFetchTopRatedMovies(
+    FetchTopRatedMoviesHomeEvent event,
+    Emitter<HomeState> emit,
+  ) async {
+    emit(FetchingTopRatedMoviesHomeState());
+    try {
+      final data = await _movieRepository.getTopRatedMovies();
+      emit(FetchedTopRatedMoviesHomeState(data));
+    } on Object catch (_) {
+      emit(FetchFailTopRatedMoviesHomeState());
     }
   }
 }
