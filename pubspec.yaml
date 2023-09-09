@@ -36,10 +36,12 @@ dependencies:
   # Storage
   hive_flutter: ^1.1.0
   hive: ^2.2.3
+  flutter_secure_storage: ^9.0.0
 
   # Utils
   logging: ^1.2.0
   equatable: ^2.0.5
+  flutter_dotenv: ^5.1.0
 
   # Widgets
   flutter_svg: ^2.0.7
@@ -70,6 +72,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - .env
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

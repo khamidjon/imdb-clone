@@ -2,7 +2,6 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:imdb_clone/domain/entities/token_data.dart';
 import 'package:imdb_clone/domain/repositories/token_repository.dart';
 
 const _baseHeaders = {
@@ -46,14 +45,14 @@ class AuthorizedRequestInterceptor extends UnauthorizedRequestInterceptor {
 
   final TokenRepository _tokenRepository;
 
-  TokenData get _token => _tokenRepository.getToken();
-
-  String get _bearerToken => 'Bearer ${_token.accessToken}';
-
   @override
-  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+  void onRequest(
+    RequestOptions options,
+    RequestInterceptorHandler handler,
+  ) async {
     try {
-      options.headers[HttpHeaders.authorizationHeader] = _bearerToken;
+      options.headers[HttpHeaders.authorizationHeader] =
+          await _tokenRepository.getBearerToken();
       super.onRequest(options, handler);
     } on DioException catch (e) {
       handler.reject(e);
