@@ -6,14 +6,14 @@ IMDB clone app.
 
 In this repository, we are going to build IMDB Clone application. This project will involve some best practices and tools.
 
-The project 
-     - follows clean architecture  
-     - uses flutter bloc state management
-     - uses go_router for navigation
-     - get_it, injectable for dependency injection
-     - dio, retrofit for rest api handling
-     - hive for data storage
-     - slang for language handling
+The project:
+- follows clean architecture  
+- uses flutter bloc state management
+- uses go_router for navigation
+- get_it, injectable for dependency injection
+- dio, retrofit for rest api handling
+- hive for data storage
+- slang for language handling
 
 ## Quick start
 
