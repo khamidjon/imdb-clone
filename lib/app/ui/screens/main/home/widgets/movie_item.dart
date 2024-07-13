@@ -25,7 +25,7 @@ class MovieItem extends StatelessWidget {
           BoxShadow(
             color: AppColors.grey.withOpacity(0.5),
             blurRadius: 4.0,
-          )
+          ),
         ],
       ),
       child: Column(
@@ -58,7 +58,7 @@ class MovieItem extends StatelessWidget {
                     Text(
                       movie.rating.toString(),
                       style: AppTypography.smallTextSecondary,
-                    )
+                    ),
                   ],
                 ),
                 const SizedBox(height: 4.0),
@@ -67,7 +67,7 @@ class MovieItem extends StatelessWidget {
                   maxLines: 2,
                   softWrap: true,
                   style: AppTypography.smallText,
-                )
+                ),
               ],
             ),
           ),

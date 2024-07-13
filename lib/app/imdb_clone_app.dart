@@ -29,7 +29,7 @@ class _IMDBCloneAppState extends State<IMDBCloneApp> {
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate
+        GlobalCupertinoLocalizations.delegate,
       ],
     );
   }
